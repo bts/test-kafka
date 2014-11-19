@@ -3,7 +3,7 @@
    [clojure.test])
   (:require
    [clojure.test :refer :all]
-   [test-kafka :as test-kafka]
+   [test-kafka]
    [clj-kafka.producer :as producer]
    [clj-kafka.consumer.simple :as consumer]
    [clj-kafka.core :as kafka]

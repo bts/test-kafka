@@ -5,6 +5,8 @@ A minimal in-process Kafka and ZooKeeper runner for testing. Adapted from [clj-k
 ## Usage
 
 ```clojure
+(require 'test-kafka)
+
 (test-kafka/with-broker [kafka-port zk-port topic-name]
   (comment "interact with kafka"))
 
