@@ -4,6 +4,14 @@ A minimal in-process Kafka and ZooKeeper runner for testing. Adapted from [clj-k
 
 ## Usage
 
+Install with Leiningen:
+
+```clojure
+[test-kafka "0.1.0"]
+```
+
+Then:
+
 ```clojure
 (require 'test-kafka)
 
