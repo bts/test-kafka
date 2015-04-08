@@ -12,7 +12,7 @@
                                org.slf4j/slf4j-log4j12]]
                  [org.apache.kafka/kafka_2.10 "0.8.2.1"]
                  [commons-io/commons-io "2.4"]
-                 [com.101tec/zkclient "0.4"
+                 [com.101tec/zkclient "0.3"
                   :exclusions [log4j]]]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.7.0-alpha5"]
                                   [zookeeper-clj "0.9.3"]
