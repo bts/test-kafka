@@ -3,8 +3,7 @@
   :url "http://github.com/bts/test-kafka"
   :license {:name "MIT License"
             :url "http://opensource.org/licenses/MIT"}
-  :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.apache.zookeeper/zookeeper "3.4.6"
+  :dependencies [[org.apache.zookeeper/zookeeper "3.4.6"
                   :exclusions [com.sun.jmx/jmxri
                                com.sun.jdmk/jmxtools
                                javax.jms/jms
@@ -15,7 +14,8 @@
                  [commons-io/commons-io "2.4"]
                  [com.101tec/zkclient "0.4"
                   :exclusions [log4j]]]
-  :profiles {:dev {:dependencies [[zookeeper-clj "0.9.3"]
+  :profiles {:dev {:dependencies [[org.clojure/clojure "1.7.0-alpha5"]
+                                  [zookeeper-clj "0.9.3"]
                                   [clj-kafka "0.2.8-0.8.1.1"
                                    :exclusions [log4j
                                                 org.slf4j/slf4j-simple]]
