@@ -4,14 +4,14 @@
   :license {:name "MIT License"
             :url "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.apache.zookeeper/zookeeper "3.4.5"
+                 [org.apache.zookeeper/zookeeper "3.4.6"
                   :exclusions [com.sun.jmx/jmxri
                                com.sun.jdmk/jmxtools
                                javax.jms/jms
                                junit
                                log4j
                                org.slf4j/slf4j-log4j12]]
-                 [org.apache.kafka/kafka_2.10 "0.8.1.1"]
+                 [org.apache.kafka/kafka_2.10 "0.8.2.1"]
                  [commons-io/commons-io "2.4"]
                  [com.101tec/zkclient "0.4"
                   :exclusions [log4j]]]

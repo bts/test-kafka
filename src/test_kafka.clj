@@ -19,7 +19,9 @@
    [org.apache.commons.io
     FileUtils]
    [java.util
-    Properties]))
+    Properties]
+   [scala
+    Option]))
 
 (defn as-properties
   "Returns a Properties instance populated from the provided map."
@@ -74,11 +76,17 @@
                             replicas 1}}]
   (AdminUtils/createTopic zk-client name partitions replicas (Properties.)))
 
+(defn option-get
+  "Gets a value or nil from a Scala `Option`."
+  [^Option option]
+  (when-not (.isEmpty option)
+    (.get option)))
+
 (defn wait-until-initialized
   [^KafkaServer kafka-server topic]
   (let [apis (.apis kafka-server)
         cache (.metadataCache apis)]
-    (while (not (.containsTopicAndPartition cache topic 0))
+    (while (not (option-get (.getPartitionInfo cache topic 0)))
       (Thread/sleep 500))))
 
 (def string-serializer
