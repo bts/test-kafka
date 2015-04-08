@@ -1,6 +1,6 @@
 # test-kafka
 
-A minimal in-process Kafka and ZooKeeper runner for testing. Adapted from [clj-kafka](https://github.com/pingles/clj-kafka)'s integration tests.
+An in-process Kafka and ZooKeeper runner for testing in Clojure. Adapted from [clj-kafka](https://github.com/pingles/clj-kafka)'s integration tests.
 
 ## Usage
 
