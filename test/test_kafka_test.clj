@@ -6,13 +6,11 @@
    [test-kafka]
    [clj-kafka.producer :as producer]
    [clj-kafka.consumer.simple :as consumer]
-   [clj-kafka.core :as kafka]
    [zookeeper :as zk]))
 
 (deftest with-zk-test
   (test-kafka/with-zk [port]
-    (kafka/with-resource [z (zk/connect (str "localhost:" port))]
-      zk/close
+    (with-open [z (zk/connect (str "localhost:" port))]
       (is (not (nil? (:data (zk/data z "/zookeeper/quota"))))))))
 
 (deftest with-broker-test
