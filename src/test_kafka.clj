@@ -87,7 +87,7 @@
   (let [apis (.apis kafka-server)
         cache (.metadataCache apis)]
     (while (not (option-get (.getPartitionInfo cache topic 0)))
-      (Thread/sleep 500))))
+      (Thread/sleep 100))))
 
 (def string-serializer
   (proxy [ZkSerializer] []
