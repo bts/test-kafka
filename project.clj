@@ -18,7 +18,9 @@
                                   [zookeeper-clj "0.9.3"
                                    :exclusions [log4j]]
                                   ;; send zookeeper-clj logging to slf4j:
+                                  [org.slf4j/slf4j-api "1.7.12"]
                                   [org.slf4j/log4j-over-slf4j "1.7.12"]
                                   ;[org.slf4j/slf4j-simple "1.7.12"]
                                   [org.slf4j/slf4j-nop "1.7.12"]
-                                  [org.apache.kafka/kafka-clients "0.8.2.1"]]}})
+                                  [org.apache.kafka/kafka-clients "0.8.2.1"]]
+                   :exclusions [org.slf4j/slf4j-api]}})
