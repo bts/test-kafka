@@ -9,16 +9,17 @@
     [org.apache.kafka.clients.producer
      KafkaProducer
      ProducerRecord]
+    [org.apache.kafka.common.serialization
+     StringSerializer]
     [org.apache.kafka.clients.consumer
      KafkaConsumer]))
 
 (defn producer
   "Creates a Kafka producer connecting to `port`."
   [port]
-  (KafkaProducer.
-    {"bootstrap.servers" (str "localhost:" port)
-     "key.serializer" "org.apache.kafka.common.serialization.StringSerializer"
-     "value.serializer" "org.apache.kafka.common.serialization.StringSerializer"}))
+  (KafkaProducer. {"bootstrap.servers" (str "localhost:" port)}
+                  (StringSerializer.)
+                  (StringSerializer.)))
 
 ;;
 
