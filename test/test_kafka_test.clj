@@ -30,6 +30,5 @@
   (test-kafka/with-broker [kafka-port zk-port topic]
     (let [message "some message"
           producer (producer kafka-port)
-          ;;consumer (consumer kafka-port)
           record (ProducerRecord. topic message)]
       (is (deref (.send producer record) 200 nil)))))
