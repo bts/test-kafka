@@ -1,4 +1,4 @@
-# test-kafka
+# test-kafka [<img src="https://circleci.com/gh/bts/test-kafka/tree/master.svg?style=svg" alt="Circle CI" title="Circle CI" align="right" />](https://circleci.com/gh/bts/test-kafka/tree/master)
 
 An in-process Kafka and ZooKeeper runner for testing in Clojure. Adapted from [clj-kafka](https://github.com/pingles/clj-kafka)'s integration tests.
 
