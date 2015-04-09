@@ -1,4 +1,4 @@
-(defproject test-kafka "0.2.0"
+(defproject test-kafka "0.2.1"
   :description "An in-process Kafka and ZooKeeper runner for testing in Clojure"
   :url "http://github.com/bts/test-kafka"
   :license {:name "MIT License"
