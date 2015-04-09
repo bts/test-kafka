@@ -27,7 +27,8 @@
   "Returns a Properties instance populated from the provided map."
   [m]
   (let [props (Properties.)]
-    (doseq [[n v] m] (.setProperty props n v))
+    (doseq [[n v] m]
+      (.setProperty props n v))
     props))
 
 (defn tmp-dir

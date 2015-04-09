@@ -15,10 +15,10 @@
                  [com.101tec/zkclient "0.3"
                   :exclusions [log4j]]]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.7.0-alpha5"]
-                                  [zookeeper-clj "0.9.3"]
-                                  [clj-kafka "0.2.8-0.8.1.1"
-                                   :exclusions [log4j
-                                                org.slf4j/slf4j-simple]]
-                                  ;; send kafka logging to slf4j:
-                                  [org.slf4j/log4j-over-slf4j "1.7.5"]
-                                  [org.slf4j/slf4j-simple "1.6.4"]]}})
+                                  [zookeeper-clj "0.9.3"
+                                   :exclusions [log4j]]
+                                  ;; send zookeeper-clj logging to slf4j:
+                                  [org.slf4j/log4j-over-slf4j "1.7.12"]
+                                  ;[org.slf4j/slf4j-simple "1.7.12"]
+                                  [org.slf4j/slf4j-nop "1.7.12"]
+                                  [org.apache.kafka/kafka-clients "0.8.2.1"]]}})

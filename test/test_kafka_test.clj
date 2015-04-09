@@ -1,12 +1,26 @@
 (ns test-kafka-test
   (:use
-   [clojure.test])
+    [clojure.test])
   (:require
-   [clojure.test :refer :all]
-   [test-kafka]
-   [clj-kafka.producer :as producer]
-   [clj-kafka.consumer.simple :as consumer]
-   [zookeeper :as zk]))
+    [clojure.test :refer :all]
+    [test-kafka]
+    [zookeeper :as zk])
+  (:import
+    [org.apache.kafka.clients.producer
+     KafkaProducer
+     ProducerRecord]
+    [org.apache.kafka.clients.consumer
+     KafkaConsumer]))
+
+(defn producer
+  "Creates a Kafka producer connecting to `port`."
+  [port]
+  (KafkaProducer.
+    {"bootstrap.servers" (str "localhost:" port)
+     "key.serializer" "org.apache.kafka.common.serialization.StringSerializer"
+     "value.serializer" "org.apache.kafka.common.serialization.StringSerializer"}))
+
+;;
 
 (deftest with-zk-test
   (test-kafka/with-zk [port]
@@ -15,9 +29,8 @@
 
 (deftest with-broker-test
   (test-kafka/with-broker [kafka-port zk-port topic]
-    (let [payload (.getBytes "test message")
-          producer-config {"metadata.broker.list" (str "localhost:" kafka-port)}
-          producer (producer/producer producer-config)
-          consumer (consumer/consumer "localhost" kafka-port "test-consumer")]
-      (producer/send-message producer (producer/message topic payload))
-      (is (number? (consumer/latest-topic-offset consumer topic 0))))))
+    (let [message "some message"
+          producer (producer kafka-port)
+          ;;consumer (consumer kafka-port)
+          record (ProducerRecord. topic message)]
+      (is (deref (.send producer record) 200 nil)))))
