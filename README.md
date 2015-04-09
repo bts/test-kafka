@@ -2,12 +2,14 @@
 
 An in-process Kafka and ZooKeeper runner for testing in Clojure. Adapted from [clj-kafka](https://github.com/pingles/clj-kafka)'s integration tests.
 
+The current version depends on Kafka 0.8.2 or higher. If you require compatibility with Kafka 0.8.0 or 0.8.1, use test-kafka [0.1.0](https://github.com/bts/test-kafka/tree/0.1.0).
+
 ## Usage
 
 Install with Leiningen:
 
 ```clojure
-[test-kafka "0.1.0"]
+[test-kafka "0.2.0"]
 ```
 
 Then:
