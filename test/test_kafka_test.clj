@@ -1,6 +1,4 @@
 (ns test-kafka-test
-  (:use
-    [clojure.test])
   (:require
     [clojure.test :refer :all]
     [test-kafka]
